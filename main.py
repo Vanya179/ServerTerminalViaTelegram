@@ -12,6 +12,10 @@ command_delimiter = 'echo ' + delimiter
 
 commands = ['cd']
 
+# todo add kill
+# todo add new_console
+# todo add chat id
+
 @bot.message_handler(func=lambda message: True)
 def run_command(message):
     # Получаем текст сообщения от пользователя
