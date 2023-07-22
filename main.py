@@ -7,8 +7,8 @@ TOKEN = '6072402897:AAHRUjm80GsUWrh_wKJLFSX6rYfrq98AYhY'
 # Создаем экземпляр бота
 bot = telebot.TeleBot(TOKEN)
 
-command_delimiter = 'echo DeLiMiTeR'
 delimiter = 'DeLiMiTeR'
+command_delimiter = 'echo ' + delimiter
 
 commands = ['cd']
 
@@ -28,9 +28,9 @@ def run_command(message):
         if result:  # Проверяем, что результат не пустой
             bot.reply_to(message, result)
         else:
-            bot.reply_to(message, "Команда выполнена, но результат пуст.")
+            bot.reply_to(message, "clear output")
     except Exception as e:
-        bot.reply_to(message, f"Ошибка при выполнении команды: {str(e)}")
+        bot.reply_to(message, f"exception: {str(e)}")
 
 # Запускаем бота
 bot.polling()
